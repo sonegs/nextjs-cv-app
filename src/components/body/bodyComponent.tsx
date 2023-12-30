@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/system';
 import { Inter } from '@next/font/google';
 import React from 'react';
+import Sidebar from './sidebar/sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,10 +29,11 @@ const BodyComponent: React.FC = () => {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-    <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-    <Header />
-    </ThemeProvider>
+        <Header />
+        <Sidebar />
+      </ThemeProvider>
   </ColorModeContext.Provider>
   )
 }
