@@ -1,48 +1,19 @@
 import { Box, Stack, styled } from "@mui/material";
+import list from "./sidebarList.utils";
 
 const StyledSidebarContainer = styled(Stack)({
     width: 250,
     display: "flex",
     alignItems: "center",
-    flexAlign: "column",
+    flexDirection: "column",
+    padding: 20,
 })
 
-enum List {
-    BEGINNING = "Beginning",
-    STORY = "Story",
-    TRAINING = "Training",
-    EXPERIENCE = "Experience",
-    HOBBIES = "Hobbies",
-}
-
 const SidebarList: React.FC = () => {
-    const list = [
-        {
-            value: List.BEGINNING,
-            icon: "BEGINNING"
-        },
-        {
-            value: List.STORY,
-            icon: "STORY"
-        },
-        {
-            value: List.TRAINING,
-            icon: "TRAINING"
-        },
-        {
-            value: List.EXPERIENCE,
-            icon: "EXPERIENCE"
-        },
-        {
-            value: List.HOBBIES,
-            icon: "HOBBIES"
-        },
-    ];
-
     return (
         <StyledSidebarContainer>
             {list?.map((item) => 
-                <Box key={item.value}> {item.value} </Box>
+                <Box key={item.value}> {item.icon} - {item.value} </Box>
             )}
         </StyledSidebarContainer>
       )
